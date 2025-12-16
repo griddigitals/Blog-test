@@ -1,0 +1,246 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+
+
+/* Newsletter Section */
+.newsletter {
+    background-color: #0F1A1F;
+    padding: 4rem 1.5rem;
+}
+
+
+.newsletter-content {
+    max-width: 56rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.newsletter-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.newsletter-description {
+    font-size: 1.125rem;
+    color: #666666;
+    margin-bottom: 2rem;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 36rem;
+    margin: 0 auto 1rem;
+}
+
+.newsletter-input {
+    flex: 1;
+    height: 48px;
+    padding: 0 1rem;
+    font-size: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--secondary);
+    color: var(--foreground);
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.newsletter-button {
+    height: 48px;
+    padding: 0 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: hsl(168, 76%, 42%);;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.newsletter-button:hover {
+    background-color: hsl(168, 76%, 37%);;
+}
+
+.newsletter-disclaimer {
+    font-size: 0.75rem;
+    color: #666666;
+    max-width: 42rem;
+    margin: 0 auto;
+}
+
+.disclaimer-link {
+    color: #666666;
+    text-decoration: underline;
+}
+
+.disclaimer-link:hover {
+    color: #212121;
+}
+
+/* Footer */
+.footer {
+    background-color: black;
+    color: #ffffff;
+}
+
+.footer-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-heading {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.footer-list {
+    list-style: none;
+}
+
+.footer-list li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-link {
+    font-size: 0.875rem;
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-link:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid #404040;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-bottom-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-copyright {
+    font-size: 0.875rem;
+    color: #999999;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-legal-link {
+    font-size: 0.875rem;
+    color: #999999;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-legal-link:hover {
+    color: #ffffff;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social-link {
+    color: #999999;
+    transition: color 0.2s;
+}
+
+.social-link:hover {
+    color: #ffffff;
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+    .newsletter-form {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 768px) {
+    .nav-desktop {
+        display: flex;
+    }
+
+    .article-title {
+        font-size: 3.75rem;
+    }
+
+    .newsletter {
+        padding: 6rem 1.5rem;
+    }
+
+    .newsletter-title {
+        font-size: 2.25rem;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 1024px) {
+    .blog-article {
+        padding: 4rem 1.5rem;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+

@@ -1,0 +1,130 @@
+:root {
+  /* -----------------------------------------------------
+     BASE BRAND + ACCENT
+  ----------------------------------------------------- */
+  --primary: #4fc3f7;
+  --primary-light: #81d4fa;
+  --primary-dark: #039be5;
+
+  /* -----------------------------------------------------
+     BACKGROUND LAYERS (Dark Theme)
+     - all backgrounds designed to work with #0F1A1F base
+  ----------------------------------------------------- */
+  --bg-base: #0F1A1F;        /* main site background */
+  --bg-elevated-1: #121A21;  /* cards */
+  --bg-elevated-2: #141F26;  /* deeper stacked sections */
+  --bg-hover: rgba(255, 255, 255, 0.04);
+
+  /* Gradient options */
+  --bg-gradient-soft: linear-gradient(135deg, #0F1A1F 0%, #141F26 100%);
+  --bg-gradient-intense: linear-gradient(135deg, #0F1A1F 0%, #11242F 100%);
+
+  /* -----------------------------------------------------
+     TEXT COLORS (Options for headings, body, muted, etc.)
+  ----------------------------------------------------- */
+
+  /* Headings (choose any you prefer) */
+  --heading-1: #ffffff;
+  --heading-2: #f5f7f8;
+  --heading-3: #e9eef0;
+
+  /* Body text */
+  --text-strong: #d0d7da;      /* recommended */
+  --text-normal: #c7d0d3;
+  --text-soft: #b4bfc3;
+
+  /* Muted text */
+  --text-muted-1: #8a9699;
+  --text-muted-2: #728084;
+  --text-muted-3: #607075;
+
+  /* Very subtle UI text */
+  --text-faint: #4b565a;
+
+  /* -----------------------------------------------------
+     BORDERS & DIVIDERS
+  ----------------------------------------------------- */
+  --border-light: #1f2a30;
+  --border-medium: #233037;
+  --border-strong: #2c3c45;
+
+  --divider-1: rgba(255, 255, 255, 0.06);
+  --divider-2: rgba(255, 255, 255, 0.1);
+
+  /* -----------------------------------------------------
+     CTA BUTTON COLORS (All options included)
+  ----------------------------------------------------- */
+
+  /* Solid CTA */
+  --cta-bg: #4fc3f7;
+  --cta-bg-hover: #81d4fa;
+  --cta-text: #0F1A1F;
+
+  /* Soft CTA (recommended for reading pages) */
+  --cta-soft-bg: rgba(79, 195, 247, 0.14);
+  --cta-soft-bg-hover: rgba(79, 195, 247, 0.22);
+  --cta-soft-text: #81d4fa;
+
+  /* Outline CTA */
+  --cta-outline-border: #4fc3f7;
+  --cta-outline-border-hover: #81d4fa;
+  --cta-outline-text: #4fc3f7;
+
+  /* Gradient CTA Variants */
+  --cta-gradient-1: linear-gradient(135deg, #4fc3f7, #039be5);
+  --cta-gradient-2: linear-gradient(135deg, #4fc3f7, #81d4fa);
+  --cta-gradient-hover: linear-gradient(135deg, #81d4fa, #4fc3f7);
+
+  /* -----------------------------------------------------
+     STATUS + NOTIFICATION COLORS
+  ----------------------------------------------------- */
+  --success: #4caf50;
+  --success-soft: rgba(76, 175, 80, 0.18);
+
+  --warning: #ffb300;
+  --warning-soft: rgba(255, 179, 0, 0.18);
+
+  --error: #ef5350;
+  --error-soft: rgba(239, 83, 80, 0.18);
+
+  --info: #4fc3f7;
+  --info-soft: rgba(79, 195, 247, 0.18);
+
+  /* -----------------------------------------------------
+     LINKS
+  ----------------------------------------------------- */
+  --link: #4fc3f7;
+  --link-hover: #81d4fa;
+  --link-active: #039be5;
+
+  /* -----------------------------------------------------
+     SHADOWS (for cards, modals, sections)
+  ----------------------------------------------------- */
+  --shadow-soft: rgba(0, 0, 0, 0.25);
+  --shadow-medium: rgba(0, 0, 0, 0.38);
+  --shadow-strong: rgba(0, 0, 0, 0.55);
+
+  /* -----------------------------------------------------
+     SPECIAL DESIGN ACCENTS (Optional but useful)
+  ----------------------------------------------------- */
+
+  /* Tiny highlight bars for headings or selected tags */
+  --highlight-blue: #4fc3f7;
+  --highlight-cyan: #5ee5ff;
+
+  /* Tag colors */
+  --tag-blue: rgba(79, 195, 247, 0.22);
+  --tag-green: rgba(76, 175, 80, 0.22);
+  --tag-orange: rgba(255, 171, 64, 0.22);
+  --tag-red: rgba(244, 67, 54, 0.22);
+
+  /* Code blocks & syntax */
+  --code-bg: #131c23;
+  --code-border: #1e2a32;
+  --code-text: #e3ecf0;
+  --code-accent: #4fc3f7;
+
+  /* Blockquotes */
+  --blockquote-border: #4fc3f7;
+  --blockquote-bg: rgba(79, 195, 247, 0.06);
+}

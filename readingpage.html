@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Grid Digitals — Navigation</title>
+
+        <link rel="stylesheet" href="css/nav.css">
+        <link rel="stylesheet" href="css/newsbar.css">
+        <link rel="stylesheet" href="css/article.css">
+        <link rel="stylesheet" href="css/articlemain.css">
+        <link rel="stylesheet" href="css/comment.css">
+        <link rel="stylesheet" href="css/relate.css">
+        <link rel="stylesheet" href="css/donation.css">
+        <link rel="stylesheet" href="css/related.css">
+        <link rel="stylesheet" href="css/foots.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    </head>
+
+    <body class="dark-mode">
+        <canvas id="bg" aria-hidden="true"></canvas>
+
+        <!-- index.html (nav portion) -->
+        <header role="banner">
+            <div class="nav-glass" role="navigation" aria-label="Main navigation">
+                <a href="#" class="logo" aria-label="Grid Digitals home">
+                    <div class="logo-badge" aria-hidden="true">GD</div>
+                    <span class="brand-text">Grid <strong style="opacity:.88">Digitals</strong></span>
+                </a>
+
+                <nav class="navbar" aria-label="Primary">
+                    <div class="nav-item" id="categoriesNav" data-panel="categoriesPanel">
+                        <span class="nav-label">Categories</span>
+                        <span class="arrow" aria-hidden="true">▼</span>
+
+                        <div class="mega-panel" id="categoriesPanel" aria-hidden="true" role="region" aria-label="Categories panel">
+                            <div class="panel-column">
+                                <h4>Web</h4>
+                                <p>Everything you need to build & grow online.</p>
+                                <a href="#">Web Design</a>
+                                <a href="#">Web Hosting</a>
+                                <a href="#">Domain Basics</a>
+                            </div>
+                            <div class="panel-column">
+                                <h4>Business</h4>
+                                <p>Tools & insights for modern business owners.</p>
+                                <a href="#">Startups</a>
+                                <a href="#">Ecommerce</a>
+                                <a href="#">Branding</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nav-item" id="resourcesNav" data-panel="resourcesPanel">
+                        <span class="nav-label">Resources</span>
+                        <span class="arrow" aria-hidden="true">▼</span>
+
+                        <div class="mega-panel" id="resourcesPanel" aria-hidden="true" role="region" aria-label="Resources panel">
+                            <div class="panel-column">
+                                <h4>Guides</h4>
+                                <p>Step-by-step walk-throughs for creators.</p>
+                                <a href="#">Tutorials</a>
+                                <a href="#">Tips & Tricks</a>
+                                <a href="#">Free Courses</a>
+                            </div>
+                            <div class="panel-column">
+                                <h4>Tools</h4>
+                                <p>Smart utilities to help you grow faster.</p>
+                                <a href="#">Analytics</a>
+                                <a href="#">SEO Tools</a>
+                                <a href="#">Content Planner</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="nav-item" id="supportNav" data-panel="supportPanel">
+                        <span class="nav-label">Support</span>
+                        <span class="arrow" aria-hidden="true">▼</span>
+
+                        <div class="mega-panel" id="supportPanel" aria-hidden="true" role="region" aria-label="Support panel">
+                            <div class="panel-column">
+                                <h4>Contact</h4>
+                                <p>Get help anytime you need it.</p>
+                                <a href="#">Live Chat</a>
+                                <a href="#">Email</a>
+                            </div>
+                            <div class="panel-column">
+                                <h4>Help Center</h4>
+                                <p>Articles and troubleshooting guides.</p>
+                                <a href="#">FAQs</a>
+                                <a href="#">Documentation</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="nav-actions" role="group" aria-label="Site actions">
+                    <button class="icon-btn" id="searchBtn" aria-label="Search" title="Search">🔍</button>
+                    <button class="subscribeBtn" id="ctaPrimary">Subscribe</button>
+
+                    <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+                        <svg width="22" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- MOBILE MENU (kept inside a single container) -->
+        <div class="mobile-menu" id="mobileMenu" aria-hidden="true" aria-label="Mobile menu">
+            <div class="panel main-panel" role="dialog" aria-modal="true" aria-label="Main mobile menu">
+                <div class="panel-header">
+                    <a class="logo" href="#">
+                        <div class="logo-badge">GD</div>
+                        <span>Grid Digitals</span>
+                    </a>
+                    <button class="close-btn" id="mobileClose" aria-label="Close menu">✕</button>
+                </div>
+
+                <div class="mobile-links" role="menu">
+                    <button class="mobile-link" data-target="categoriesPanelMobile" aria-haspopup="true" aria-controls="categoriesPanelMobile">Categories <span class="arrow-btn">▶</span></button>
+                    <button class="mobile-link" data-target="resourcesPanelMobile" aria-haspopup="true" aria-controls="resourcesPanelMobile">Resources <span class="arrow-btn">▶</span></button>
+                    <button class="mobile-link" data-target="supportPanelMobile" aria-haspopup="true" aria-controls="supportPanelMobile">Support <span class="arrow-btn">▶</span></button>
+                </div>
+
+                <div style="margin-top:auto; display:flex; justify-content:center;">
+                    <button class="subscribeBtn" id="ctaPrimaryMobile">Subscribe</button>
+                </div>
+
+                <div class="mode-switch-container">
+                    <label class="mode-switch" aria-label="Toggle light and dark mode">
+                        <input type="checkbox" id="darkLightToggle" aria-checked="false" />
+                        <span class="slider">
+                            <span class="sun">☀️</span>
+                            <span class="moon">🌙</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Mobile nested panels (each is hidden by default) -->
+            <div class="panel nested-panel" id="categoriesPanelMobile" aria-hidden="true">
+                <div class="panel-header">
+                    <a class="logo" href="#"><div class="logo-badge">GD</div><span>Grid Digitals</span></a>
+                    <button class="close-btn panel-close" aria-label="Close panel">✕</button>
+                </div>
+                <button class="icon-btn back-btn" aria-label="Back">◀ Back</button>
+
+                <div class="panel-column">
+                    <div class="dropdown">
+                        <div class="dropdown-header">
+                            <div class="title-content">
+                                <h4>Web</h4>
+                                <p>Everything you need to build & grow online.</p>
+                            </div>
+                            <button class="arrow-btn" aria-expanded="false">▶</button>
+                        </div>
+                        <div class="dropdown-content" role="menu">
+                            <a href="#">Web Design</a>
+                            <a href="#">Web Hosting</a>
+                            <a href="#">Domain Basics</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <div class="dropdown-header">
+                            <div class="title-content">
+                                <h4>Business</h4>
+                                <p>Tools & insights for modern business owners.</p>
+                            </div>
+                            <button class="arrow-btn" aria-expanded="false">▶</button>
+                        </div>
+                        <div class="dropdown-content" role="menu">
+                            <a href="#">Startups</a>
+                            <a href="#">Ecommerce</a>
+                            <a href="#">Branding</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel nested-panel" id="resourcesPanelMobile" aria-hidden="true">
+                <div class="panel-header">
+                    <a class="logo" href="#"><div class="logo-badge">GD</div><span>Grid Digitals</span></a>
+                    <button class="close-btn panel-close" aria-label="Close panel">✕</button>
+                </div>
+                <button class="icon-btn back-btn" aria-label="Back">◀ Back</button>
+
+                <div class="panel-column">
+                    <div class="dropdown">
+                        <div class="dropdown-header">
+                            <div class="title-content">
+                                <h4>Guides</h4>
+                                <p>Step-by-step walk-throughs for creators.</p>
+                            </div>
+                            <button class="arrow-btn" aria-expanded="false">▶</button>
+                        </div>
+                        <div class="dropdown-content" role="menu">
+                            <a href="#">Tutorials</a>
+                            <a href="#">Tips & Tricks</a>
+                            <a href="#">Free Courses</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <div class="dropdown-header">
+                            <div class="title-content">
+                                <h4>Tools</h4>
+                                <p>Smart utilities to help you grow faster.</p>
+                            </div>
+                            <button class="arrow-btn" aria-expanded="false">▶</button>
+                        </div>
+                        <div class="dropdown-content" role="menu">
+                            <a href="#">Analytics</a>
+                            <a href="#">SEO Tools</a>
+                            <a href="#">Content Planner</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel nested-panel" id="supportPanelMobile" aria-hidden="true">
+                <div class="panel-header">
+                    <a class="logo" href="#"><div class="logo-badge">GD</div><span>Grid Digitals</span></a>
+                    <button class="close-btn panel-close" aria-label="Close panel">✕</button>
+                </div>
+                <button class="icon-btn back-btn" aria-label="Back">◀ Back</button>
+
+                <div class="panel-column">
+                    <div class="dropdown">
+                        <div class="dropdown-header">
+                            <div class="title-content">
+                                <h4>Contact</h4>
+                                <p>Get help anytime you need it.</p>
+                            </div>
+                            <button class="arrow-btn" aria-expanded="false">▶</button>
+                        </div>
+                        <div class="dropdown-content" role="menu">
+                            <a href="#">Live Chat</a>
+                            <a href="#">Email</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <div class="dropdown-header">
+                            <div class="title-content">
+                                <h4>Help Center</h4>
+                                <p>Articles and troubleshooting guides.</p>
+                            </div>
+                            <button class="arrow-btn" aria-expanded="false">▶</button>
+                        </div>
+                        <div class="dropdown-content" role="menu">
+                            <a href="#">FAQs</a>
+                            <a href="#">Documentation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subscribe modal -->
+        <div id="subscribeModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Subscribe">
+            <div class="modal-content">
+                <button class="modal-close" aria-label="Close">&times;</button>
+                <h3>Join our newsletter</h3>
+                <p>Get updates and early access to Grid Digitals.</p>
+                <input type="email" id="subscriberEmail" placeholder="Enter your email" aria-label="Email address" />
+                <button id="subscribeSubmit" class="subscribeBtn">Subscribe</button>
+                <p id="subscribeMessage" role="status" aria-live="polite"></p>
+            </div>
+        </div>
+
+        <div class="news-ticker">
+            <span class="label">Latest</span>
+
+            <div class="ticker-wrap">
+                <div class="ticker">
+                    <span>🔥 New article: 10 Ways AI Will Change Digital Business in 2025</span>
+                    <span>🚀 Grid Digitals hits 1,000 readers this month!</span>
+                    <span>💡 Introducing our new Startup Insights category</span>
+                </div>
+            </div>
+        </div>
+
+                 <div class="container">
+        <!-- Article Header -->
+<div class="article-wrapper">
+  <article class="article" id="article">
+
+    <!-- Meta & Category -->
+    <div class="article-meta-top">
+      <div class="meta">
+        <span class="category">E-COMMERCE</span>
+        <span class="muted">April 23, 2023</span>
+        <span class="muted">John DOE</span>
+        <span class="muted">• <span id="reading-time"></span></span>
+      </div>
+    </div>
+
+    <!-- Title -->
+    <h1>Maximizing Sales with Effective E‑commerce Strategies</h1>
+
+    <!-- Author Info -->
+    <div class="author" aria-label="Author">
+      <div class="avatar" aria-hidden="true">JD</div>
+      <div class="author-info">
+        <div class="name">John Doe</div>
+        <div class="role">E‑commerce Strategist</div>
+
+        <!-- Social Links -->
+        <div class="author-social">
+          <!-- Facebook -->
+          <a href="https://facebook.com/yourprofile" class="social-link facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/yourprofile" class="social-link instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+
+          <!-- X / Formerly Twitter -->
+<a href="https://x.com/yourprofile" class="social-link x" aria-label="X" target="_blank" rel="noopener noreferrer">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
+    <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z"/>
+  </svg>
+</a>
+
+
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com/in/yourprofile" class="social-link linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="article-divider">
+
+  </article>
+</div>
+
+<div class="sticky-article-bar">
+  <div class="left-side">
+    <span>Summarize with:</span>
+
+    <div class="ai-icons">
+
+      <!-- CHATGPT -->
+      <a href="#" onclick="openAIModal('chatgpt'); return false;" title="Summarize with ChatGPT">
+        <img src="chatgpt-icon.svg" alt="ChatGPT">
+      </a>
+
+      <!-- CLAUDE -->
+      <a href="#" onclick="openAIModal('claude'); return false;" title="Summarize with Claude AI">
+        <img src="claude-icon.svg" alt="Claude AI">
+      </a>
+
+      <!-- GOOGLE (BARD) -->
+      <a href="#" onclick="openAIModal('bard'); return false;" title="Summarize with Google Bard">
+        <img src="google-icon.svg" alt="Google AI">
+      </a>
+
+      <!-- GROK -->
+      <a href="#" onclick="openAIModal('grok'); return false;" title="Summarize with Grok">
+        <img src="grok-icon.svg" alt="Grok AI">
+      </a>
+
+      <!-- PERPLEXITY -->
+      <a href="#" onclick="openAIModal('perplexity'); return false;" title="Summarize with Perplexity AI">
+        <img src="perplexity-icon.svg" alt="Perplexity AI">
+      </a>
+
+      <!-- GRID -->
+      <a href="#" onclick="openAIModal('grid'); return false;" title="Summarize with Grid Digitals">
+        <img src="grid-logo.svg" alt="Grid Digitals">
+      </a>
+
+    </div>
+  </div>
+  
+
+
+  <div class="right-side">
+    <span>Share:</span>
+    <div class="share-icons">
+
+        <!-- Copy Link -->
+<a href="#" class="social-link copy-link" aria-label="Copy Link">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+    <path d="M3.9 12c0-1.7 1.4-3.1 3.1-3.1h4v-1.5h-4c-2.5 0-4.6 2.1-4.6 4.6s2.1 4.6 4.6 4.6h4v-1.5h-4c-1.7 0-3.1-1.4-3.1-3.1zm4.5-1h8.1v2h-8.1v-2zm9.6-5.4c-1.7 0-3.1 1.4-3.1 3.1v4h1.5v-4c0-0.9 0.7-1.6 1.6-1.6s1.6 0.7 1.6 1.6v4h1.5v-4c0-1.7-1.4-3.1-3.1-3.1z"/>
+  </svg>
+</a>
+
+      <!-- Facebook -->
+      <a href="https://facebook.com/yourprofile" class="social-link facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+        </svg>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/yourprofile" class="social-link instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      </a>
+
+      <!-- X / Twitter -->
+<a href="https://x.com/yourprofile" class="social-link x" aria-label="X" target="_blank" rel="noopener noreferrer">
+  <svg viewBox="0 0 512 512" fill="#ccc" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z"/>
+  </svg>
+</a>
+
+
+
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com/in/yourprofile" class="social-link linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+          <rect x="2" y="9" width="4" height="12"></rect>
+          <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+    
+
+
+
+    
+    
+
+        <!-- Mobile TOC Toggle -->
+        <div class="mobile-toc-toggle" id="mobileTocToggle">
+            <button class="mobile-toc-button" id="mobileTocButton">
+                <span class="mobile-toc-label">In this article</span>
+                <svg class="mobile-toc-icon" id="mobileTocIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+            <div class="mobile-toc-content" id="mobileTocContent">
+                <nav class="mobile-toc-nav">
+                    <button class="mobile-toc-item" data-section="introduction">
+                        <span class="mobile-toc-dot"></span>
+                        <span>Introduction</span>
+                    </button>
+                    <button class="mobile-toc-item" data-section="choose-niche">
+                        <span class="mobile-toc-dot"></span>
+                        <span>Choose Your Niche</span>
+                    </button>
+                    <button class="mobile-toc-item" data-section="select-platform">
+                        <span class="mobile-toc-dot"></span>
+                        <span>Select a Platform</span>
+                    </button>
+                    <button class="mobile-toc-item" data-section="create-content">
+                        <span class="mobile-toc-dot"></span>
+                        <span>Create Quality Content</span>
+                    </button>
+                    <button class="mobile-toc-item" data-section="design-blog">
+                        <span class="mobile-toc-dot"></span>
+                        <span>Design Your Blog</span>
+                    </button>
+                    <button class="mobile-toc-item" data-section="promote-content">
+                        <span class="mobile-toc-dot"></span>
+                        <span>Promote Your Content</span>
+                    </button>
+                    <button class="mobile-toc-item" data-section="monetize">
+                        <span class="mobile-toc-dot"></span>
+                        <span>Monetize Your Blog</span>
+                    </button>
+                    <button class="mobile-toc-item" data-section="conclusion">
+                        <span class="mobile-toc-dot"></span>
+                        <span>Conclusion</span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <!-- Sidebar - Table of Contents -->
+            <aside class="sidebar">
+                <div class="sidebar-sticky">
+                    <div class="sidebar-card">
+                        <div class="sidebar-header">
+                            <h2 class="sidebar-title">In this article</h2>
+                        </div>
+                        <nav class="sidebar-nav">
+                            <div class="sidebar-line"></div>
+                            <button class="sidebar-item" data-section="introduction">
+                                <span class="sidebar-dot"></span>
+                                <span>Introduction</span>
+                            </button>
+                            <button class="sidebar-item" data-section="choose-niche">
+                                <span class="sidebar-dot"></span>
+                                <span>Choose Your Niche</span>
+                            </button>
+                            <button class="sidebar-item" data-section="select-platform">
+                                <span class="sidebar-dot"></span>
+                                <span>Select a Platform</span>
+                            </button>
+                            <button class="sidebar-item" data-section="create-content">
+                                <span class="sidebar-dot"></span>
+                                <span>Create Quality Content</span>
+                            </button>
+                            <button class="sidebar-item" data-section="design-blog">
+                                <span class="sidebar-dot"></span>
+                                <span>Design Your Blog</span>
+                            </button>
+                            <button class="sidebar-item" data-section="promote-content">
+                                <span class="sidebar-dot"></span>
+                                <span>Promote Your Content</span>
+                            </button>
+                            <button class="sidebar-item" data-section="monetize">
+                                <span class="sidebar-dot"></span>
+                                <span>Monetize Your Blog</span>
+                            </button>
+                            <button class="sidebar-item" data-section="conclusion">
+                                <span class="sidebar-dot"></span>
+                                <span>Conclusion</span>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Article Content -->
+            <main class="main-content">
+
+
+                <article class="article">
+                    
+                    <!-- Introduction -->
+                    <section id="introduction" class="section">
+                        <h2 class="section-title">Introduction</h2>
+                        <p class="section-text">
+                            Starting a blog in 2026 is one of the most rewarding creative endeavors you can undertake. Whether you
+                            want to share your passion, build an audience, or create a profitable business, blogging offers endless
+                            possibilities.
+                        </p>
+                        <p class="section-text">
+                            In this comprehensive guide, we'll walk you through every step of the blogging journey, from finding
+                            your niche to monetizing your content. Bookmark this page and use the navigation on the left to jump to
+                            any section at any time.
+                        </p>
+                    </section>
+
+                    <hr class="separator">
+
+                    <!-- Choose Your Niche -->
+                    <section id="choose-niche" class="section">
+                        <h2 class="section-title">Choose Your Niche</h2>
+                        <p class="section-text">
+                            Your niche is the foundation of your blog. It's the specific topic or area you'll focus on, and
+                            choosing the right one is crucial for long-term success.
+                        </p>
+                        <h3 class="subsection-title">Finding your perfect niche</h3>
+                        <ul class="section-list">
+                            <li>Identify your passions and expertise.</li>
+                            <li>Research market demand and competition.</li>
+                            <li>Consider profitability and monetization potential.</li>
+                            <li>Think about long-term sustainability.</li>
+                        </ul>
+                        <p class="section-text">
+                            The best niches combine your interests with real market demand. Take time to research and validate your
+                            ideas before committing.
+                        </p>
+                    </section>
+
+                    <hr class="separator">
+
+                    <!-- Select a Platform -->
+                    <section id="select-platform" class="section">
+                        <h2 class="section-title">Select a Platform</h2>
+                        <p class="section-text">
+                            Choosing the right blogging platform is essential. Your platform should be user-friendly, scalable, and
+                            equipped with the features you need.
+                        </p>
+                    </section>
+
+                    <hr class="separator">
+
+                    <!-- Create Quality Content -->
+                    <section id="create-content" class="section">
+                        <h2 class="section-title">Create Quality Content</h2>
+                        <p class="section-text">
+                            Content is king in the blogging world. High-quality, valuable content attracts readers, builds
+                            authority, and drives engagement.
+                        </p>
+                        <h3 class="subsection-title">Content creation tips</h3>
+                        <ul class="section-list">
+                            <li>Write compelling headlines that grab attention.</li>
+                            <li>Structure your posts for easy readability.</li>
+                            <li>Use visuals to enhance your message.</li>
+                            <li>Optimize for search engines (SEO).</li>
+                            <li>Edit and proofread thoroughly.</li>
+                        </ul>
+                        <p class="section-text">
+                            Consistency is key. Develop a content calendar and stick to a regular publishing schedule to build
+                            momentum and audience loyalty.
+                        </p>
+                    </section>
+
+                    <hr class="separator">
+
+                    <!-- Design Your Blog -->
+                    <section id="design-blog" class="section">
+                        <h2 class="section-title">Design Your Blog</h2>
+                        <p class="section-text">
+                            Your blog's design creates the first impression. A clean, professional look builds credibility and
+                            keeps readers engaged.
+                        </p>
+                        <h3 class="subsection-title">Design best practices</h3>
+                        <ul class="section-list">
+                            <li>Choose a responsive, mobile-friendly theme.</li>
+                            <li>Use a consistent color scheme and typography.</li>
+                            <li>Ensure fast loading speeds.</li>
+                            <li>Make navigation intuitive and user-friendly.</li>
+                            <li>Include clear calls to action.</li>
+                        </ul>
+                    </section>
+
+                    <hr class="separator">
+
+                    <!-- Promote Your Content -->
+                    <section id="promote-content" class="section">
+                        <h2 class="section-title">Promote Your Content</h2>
+                        <p class="section-text">
+                            Creating great content is only half the battle. You need to actively promote your blog to reach your
+                            target audience.
+                        </p>
+                        <h3 class="subsection-title">Promotion strategies</h3>
+                        <div class="card-grid">
+                            <div class="promo-card">
+                                <h4 class="card-title">Social media marketing</h4>
+                                <p class="card-text">
+                                    Share your content on relevant social platforms and engage with your community.
+                                </p>
+                            </div>
+                            <div class="promo-card">
+                                <h4 class="card-title">Email marketing</h4>
+                                <p class="card-text">
+                                    Build an email list to nurture relationships and drive repeat traffic.
+                                </p>
+                            </div>
+                            <div class="promo-card">
+                                <h4 class="card-title">Guest blogging</h4>
+                                <p class="card-text">
+                                    Write for other blogs in your niche to expand your reach and build backlinks.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <hr class="separator">
+
+                    <!-- Monetize Your Blog -->
+                    <section id="monetize" class="section">
+                        <h2 class="section-title">Monetize Your Blog</h2>
+                        <p class="section-text">
+                            Once you've built an audience, there are numerous ways to turn your blog into a profitable business.
+                        </p>
+                        <h3 class="subsection-title">Monetization methods</h3>
+                        <ul class="section-list">
+                            <li>Display advertising and ad networks.</li>
+                            <li>Affiliate marketing partnerships.</li>
+                            <li>Sponsored content and brand collaborations.</li>
+                            <li>Digital products and courses.</li>
+                            <li>Consulting and services.</li>
+                            <li>Membership and subscription models.</li>
+                        </ul>
+                        <p class="section-text">
+                            Don't rush into monetization. Focus on building quality content and a loyal audience first, then
+                            implement monetization strategies strategically.
+                        </p>
+                    </section>
+
+                    <hr class="separator">
+
+                    <!-- Conclusion -->
+                    <section id="conclusion" class="section">
+                        <h2 class="section-title">Conclusion</h2>
+                        <p class="section-text">
+                            Starting a successful blog takes time, dedication, and consistent effort. But with the right approach
+                            and persistence, you can build a thriving online presence that achieves your goals.
+                        </p>
+                        <p class="section-text">
+                            Remember: every successful blogger started exactly where you are now. Take that first step, stay
+                            consistent, and watch your blog grow over time. Good luck on your blogging journey!
+                        </p>
+                        <div class="cta-card">
+                            <h3 class="cta-title">Ready to start your blog?</h3>
+                            <p class="cta-text">
+                                Take action today and begin your blogging journey. The perfect time to start is now.
+                            </p>
+                            <button class="cta-button">Get started</button>
+                        </div>
+                    </section>
+                </article>
+            </main>
+        </div>
+         <div class="container main-content">
+
+
+        <!-- Comments Section -->
+        <section class="comments-section">
+            <div class="comments-header">
+                <h2 class="comments-title">💬 Comments</h2>
+                <button class="btn-outline" onclick="scrollToCommentForm()">Leave a comment</button>
+            </div>
+
+            <div id="comments-list" class="comments-list">
+                <!-- Comments will be rendered here by JavaScript -->
+            </div>
+
+            <div id="load-more-wrapper" class="load-more-wrapper">
+    <button id="load-more-btn" class="btn-outline">Show More Comments ▼</button>
+</div>
+
+
+            <!-- Comment Form -->
+            <div class="comment-form-wrapper" id="comment-form">
+                <h3 class="form-title">Leave a reply</h3>
+                
+                <div id="form-error" class="form-error hidden">
+                    Please fill the required fields and accept the privacy checkbox.
+                </div>
+
+                <form id="commentForm" class="comment-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comment">Comment *</label>
+                        <textarea id="comment" name="comment" rows="6" placeholder="Share your thoughts..." required></textarea>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="privacy" name="privacy" required>
+                        <label for="privacy">
+                            By using this form you agree that your personal data would be processed in accordance with our 
+                            <a href="#" class="privacy-link">Privacy Policy</a>.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Submit Comment</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <section class="related-articles-section" role="region" aria-label="Related articles">
+  <h2 class="related-title">Related Articles</h2>
+
+  <div class="related-spotlight">
+    <!-- Featured -->
+    <a href="#" class="featured-card related-card" data-parallax>
+      <div class="media media-feature" aria-hidden="true">
+        <picture>
+          <source type="image/avif" srcset="images/feat-800.avif 800w, images/feat-1200.avif 1200w" sizes="(min-width:1024px) 680px, 100vw">
+          <source type="image/webp" srcset="images/feat-800.webp 800w, images/feat-1200.webp 1200w" sizes="(min-width:1024px) 680px, 100vw">
+          <img
+            class="thumb lazy"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='680'%3E%3Crect width='100%25' height='100%25' fill='%230f1417'/%3E%3C/svg%3E"
+            data-src="images/feat-1200.jpg"
+            alt="Featured article thumbnail"
+            width="1200" height="680"
+            loading="lazy"
+            decoding="async">
+        </picture>
+      </div>
+
+      <div class="related-featured-info">
+        <div class="kicker">Featured</div>
+        <h3 class="related-article-title">How to Choose the Perfect Blog Niche in 2026</h3>
+        <p class="related-meta">5 min read • Blogging</p>
+      </div>
+    </a>
+
+    <!-- Grid of smaller cards -->
+    <div class="mini-grid">
+      <a href="#" class="related-card">
+        <div class="media">
+          <picture>
+            <source type="image/avif" srcset="images/thumb1-400.avif 400w, images/thumb1-800.avif 800w" sizes="(min-width:1024px) 240px, 48vw">
+            <source type="image/webp" srcset="images/thumb1-400.webp 400w, images/thumb1-800.webp 800w" sizes="(min-width:1024px) 240px, 48vw">
+            <img class="thumb lazy"
+                 src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='480'%3E%3Crect width='100%25' height='100%25' fill='%230f1417'/%3E%3C/svg%3E"
+                 data-src="images/thumb1-800.jpg"
+                 alt="15 Design Tips to Improve User Experience"
+                 width="800" height="480"
+                 loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="related-info">
+          <h4 class="related-article-title">15 Design Tips to Improve User Experience</h4>
+          <p class="related-meta">6 min read • Design</p>
+        </div>
+      </a>
+
+      <a href="#" class="related-card">
+        <div class="media">
+          <picture>
+            <source type="image/avif" srcset="images/thumb2-400.avif 400w, images/thumb2-800.avif 800w" sizes="(min-width:1024px) 240px, 48vw">
+            <source type="image/webp" srcset="images/thumb2-400.webp 400w, images/thumb2-800.webp 800w" sizes="(min-width:1024px) 240px, 48vw">
+            <img class="thumb lazy"
+                 src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='480'%3E%3Crect width='100%25' height='100%25' fill='%230f1417'/%3E%3C/svg%3E"
+                 data-src="images/thumb2-800.jpg"
+                 alt="SEO Basics Every Beginner Must Know"
+                 width="800" height="480"
+                 loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="related-info">
+          <h4 class="related-article-title">SEO Basics Every Beginner Must Know</h4>
+          <p class="related-meta">4 min read • SEO</p>
+        </div>
+      </a>
+
+      <a href="#" class="related-card">
+        <div class="media">
+          <picture>
+            <source type="image/avif" srcset="images/thumb3-400.avif 400w, images/thumb3-800.avif 800w" sizes="(min-width:1024px) 240px, 48vw">
+            <source type="image/webp" srcset="images/thumb3-400.webp 400w, images/thumb3-800.webp 800w" sizes="(min-width:1024px) 240px, 48vw">
+            <img class="thumb lazy"
+                 src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='480'%3E%3Crect width='100%25' height='100%25' fill='%230f1417'/%3E%3C/svg%3E"
+                 data-src="images/thumb3-800.jpg"
+                 alt="How to Monetize Your First 1,000 Readers"
+                 width="800" height="480"
+                 loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="related-info">
+          <h4 class="related-article-title">How to Monetize Your First 1,000 Readers</h4>
+          <p class="related-meta">7 min read • Business</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+                 </div>
+
+    
+
+
+
+<section class="donation-section">
+  <div class="container">
+    <div class="donation-card">
+      <h2 class="donation-title">Support Our Work</h2>
+      <p class="donation-text">
+        If you enjoy our content and want to help us keep creating high-quality articles, consider donating. Every contribution helps us grow and keep this project alive.
+      </p>
+      <a href="#" class="donate-button">Donate Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="newsletter-content">
+                <h2 class="newsletter-title">The newsletter for entrepreneurs</h2>
+                <p class="newsletter-description">
+                    Join millions of self-starters in getting business resources, tips, and inspiring stories in your inbox.
+                </p>
+                <form id="newsletter-form" class="newsletter-form">
+                    <input 
+                        type="email" 
+                        id="email-input"
+                        placeholder="Enter email" 
+                        class="newsletter-input"
+                        required
+                    >
+                    <button type="submit" class="newsletter-button">Subscribe</button>
+                </form>
+                <p class="newsletter-disclaimer">
+                    Unsubscribe anytime. By entering your email, you agree to receive marketing emails from Grid Digitals. 
+                    By proceeding, you agree to the 
+                    <a href="#" class="disclaimer-link">Terms and Conditions</a> and 
+                    <a href="#" class="disclaimer-link">Privacy Policy</a>.
+                </p>
+            </div>
+        </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3 class="footer-heading">ONLINE STORE</h3>
+                    <ul class="footer-list">
+                        <li><a href="#" class="footer-link">Sell online</a></li>
+                        <li><a href="#" class="footer-link">Features</a></li>
+                        <li><a href="#" class="footer-link">Examples</a></li>
+                        <li><a href="#" class="footer-link">Website builder</a></li>
+                        <li><a href="#" class="footer-link">Online retail</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-heading">POINT OF SALE</h3>
+                    <ul class="footer-list">
+                        <li><a href="#" class="footer-link">Point of sale</a></li>
+                        <li><a href="#" class="footer-link">Features</a></li>
+                        <li><a href="#" class="footer-link">Hardware</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-heading">SUPPORT</h3>
+                    <ul class="footer-list">
+                        <li><a href="#" class="footer-link">24/7 support</a></li>
+                        <li><a href="#" class="footer-link">Shopify Help Center</a></li>
+                        <li><a href="#" class="footer-link">Forums</a></li>
+                        <li><a href="#" class="footer-link">API documentation</a></li>
+                        <li><a href="#" class="footer-link">Free tools</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-heading">GRID DIGITALS</h3>
+                    <ul class="footer-list">
+                        <li><a href="#" class="footer-link">Contact</a></li>
+                        <li><a href="#" class="footer-link">Partner program</a></li>
+                        <li><a href="#" class="footer-link">Affiliate program</a></li>
+                        <li><a href="#" class="footer-link">About</a></li>
+                        <li><a href="#" class="footer-link">Investors</a></li>
+                        <li><a href="#" class="footer-link">Blog topics</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p class="footer-copyright">© 2025 Griddigitals, Inc.</p>
+                    <div class="footer-legal">
+                        <a href="#" class="footer-legal-link">Terms of Service</a>
+                        <a href="#" class="footer-legal-link">Privacy Policy</a>
+                    </div>
+                </div>
+
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="X">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+<!-- TOAST -->
+<div id="toast" class="toast">Prompt copied — just paste!</div>
+
+<div id="aiModal" class="ai-modal">
+  <div class="ai-modal-content">
+    <button class="close-modal">&times;</button>
+
+    <h2>Prompt Copied ✔</h2>
+    <p>When the AI site opens, just <b>paste</b> and press <b>Enter</b>.</p>
+
+    <button id="continueBtn" class="continue-btn">Open AI Site</button>
+  </div>
+</div>
+
+
+
+
+        <button id="backToTop">↑</button>
+  
+        
+        <script src="js/readingpage.js" defer></script>
+        <script src="js/article.js" defer></script>
+        <script src="js/nav.js" defer></script>
+        <script src="js/comment.js" defer></script>
+        <script src="js/foots.js"></script>
+
+
+        <script>
+// The fixed prompt you want to copy
+const AI_PROMPT = "Summarize the article on this page for me in 3 key insights.";
+
+// Links for each provider
+const AI_LINKS = {
+  chatgpt: "https://chat.openai.com/",
+  claude: "https://claude.ai/",
+  grok: "https://x.ai/chat",
+  perplexity: "https://www.perplexity.ai/"
+};
+
+let selectedAI = null;
+
+// Open modal
+function openAIModal(aiService) {
+  selectedAI = aiService;
+
+  // Copy prompt immediately
+  navigator.clipboard.writeText(AI_PROMPT).catch(() => {
+    console.error("Clipboard failed.");
+  });
+
+  // Show modal
+  document.getElementById("aiModal").style.display = "flex";
+}
+
+// Continue button
+document.getElementById("continueBtn").addEventListener("click", () => {
+  if (!selectedAI) return;
+
+  const url = AI_LINKS[selectedAI];
+
+  // Fallback toast (after opening in new tab)
+  showToast();
+
+  // open in new tab so toast can show on your site
+  window.open(url, "_blank");
+
+  // close modal
+  document.getElementById("aiModal").style.display = "none";
+});
+
+const aiModal = document.getElementById("aiModal");
+const closeModalBtn = document.querySelector(".close-modal");
+
+closeModalBtn.addEventListener("click", () => {
+  aiModal.style.display = "none";
+});
+
+
+// Toast function
+function showToast() {
+  const toast = document.getElementById("toast");
+  toast.classList.add("show");
+
+  // hide after 1.5 sec
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 1500);
+}
+</script>
+
+    </body>
+</html>

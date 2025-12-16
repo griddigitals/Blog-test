@@ -1,0 +1,95 @@
+.news-ticker {
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    #0F1A1F,
+    #15242B,
+    #0A1316,
+    #000000,
+    #1E3A46,
+    #082129
+  );
+  background-size: 500% 500%;
+  animation: gradientShift 15s ease infinite;
+
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  overflow: hidden;
+  gap: 10px;
+  position: relative;
+  z-index: 2;
+
+  /* THIS MAKES IT BELOW THE NAV */
+  margin-top: calc(var(--nav-height, 64px) + 20px);
+}
+
+
+
+.ticker-wrap {
+  overflow: hidden;
+  flex: 1;
+}
+
+.ticker {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: tickerMove 18s linear infinite;
+  gap: 60px;
+}
+
+.ticker span {
+  font-size: 14px;
+  opacity: 0.95;
+  cursor: pointer;
+}
+
+@keyframes tickerMove {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.news-ticker .label {
+  background: black;
+  color: #fff;
+  padding: 6px 12px; /* slightly larger padding */
+  border-radius: 4px;
+  font-size: 14px; /* a touch bigger */
+  font-weight: 700; /* more bold */
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+  margin-left: 16px;
+
+  /* small shadow for subtle prominence */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* optional divider / flow effect */
+.news-ticker .label::before {
+  content: "";
+  width: 2px;
+  height: 18px;
+  background: rgba(255,255,255,0.5);
+  margin-right: 6px;
+  display: inline-block;
+  border-radius: 1px;
+}
+
+/* first ticker item slightly overlaps label to look like it's entering */
+.ticker span:first-child {
+  margin-left: -8px; /* adjust for effect */
+}
+
+
+.news-ticker .label::before {
+  background: rgba(0, 191, 165, 0.5); /* subtle cyan tint to match design */
+}

@@ -1,0 +1,92 @@
+/* =========================
+   01 — VARIABLES & THEMING
+========================= */
+:root {
+  --bg: #0F1A1F;
+  --white: #ffffff;
+  --muted: #AAB6B9;
+
+  --glass: rgba(255,255,255,0.06);
+  --panel-bg: rgba(16,22,28,0.72);
+
+  --accent-1: #00C982;
+  --accent-2: #00E4FF;
+  --cta-gradient: linear-gradient(90deg,var(--accent-1),var(--accent-2));
+
+  --nav-height: 72px;
+  --nav-padding: 12px 24px;
+  --max-width: 1200px;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+
+  --ease: cubic-bezier(.2,.9,.28,1);
+  --ease-fast: cubic-bezier(.4,0,.2,1);
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; min-height: 100%; }
+
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--white);
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(0,242,254,0.06), transparent 10%),
+    var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+a { color: inherit; text-decoration: none; }
+
+:focus { outline: 3px solid rgba(0,201,130,0.12); outline-offset: 3px; }
+
+/* Prevent scroll when modal or mobile menu open (JS toggles .no-scroll on body) */
+body.no-scroll { overflow: hidden; }
+
+/* =========================
+   03 — CANVAS / BACKGROUND
+========================= */
+#bg {
+  position: fixed; inset: 0; width: 100%; height: 100%;
+  z-index: 0; pointer-events: none; user-select: none; mix-blend-mode: screen;
+  opacity: 0.9; will-change: opacity, transform;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: #111;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+}
+
+#backToTop.show {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#backToTop.hide {
+  opacity: 0;
+  transform: translateY(20px);
+}

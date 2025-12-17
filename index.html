@@ -563,10 +563,12 @@
     </div>
   </div>
 </section>
+
 <script>
 const SUGGEST_API_URL =
   "https://script.google.com/macros/s/AKfycbyYeev7Iq89apahPfMCeBY6Cj1tuqYfTmZ_RSQo-RPBCJyYgUlJ0nmM7xh9RBrgyYuy/exec";
 
+// Generate / get anonymous user ID
 function getUserId() {
   let userId = localStorage.getItem("gd_topic_uid");
   if (!userId) {
@@ -576,7 +578,7 @@ function getUserId() {
   return userId;
 }
 
-document.getElementById("suggestForm").addEventListener("submit", async function (e) {
+document.getElementById("suggestForm").addEventListener("submit", async function(e) {
   e.preventDefault();
 
   const input = document.getElementById("topicInput");
@@ -588,6 +590,7 @@ document.getElementById("suggestForm").addEventListener("submit", async function
   responseEl.textContent = "Sending...";
   responseEl.style.color = "#555";
 
+  // Use FormData to avoid CORS preflight
   const formData = new FormData();
   formData.append("userId", getUserId());
   formData.append("topic", topic);
@@ -618,6 +621,7 @@ document.getElementById("suggestForm").addEventListener("submit", async function
   }
 });
 </script>
+
 
   <section class="donation-section">
   <div class="container">
@@ -807,4 +811,5 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
 </body>
 
 </html>
+
 
